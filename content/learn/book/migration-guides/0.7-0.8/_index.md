@@ -249,7 +249,7 @@ commands
 
 * a `HandleId`, use `&Handle::weak(id)` instead, to create a weak handle. You may have been able to store a type safe `Handle` instead.
 * a `HandleUntyped`, use `&handle_untyped.typed_weak()` to create a weak handle of the specified type. This is most likely to be the useful when using [load_folder](https://docs.rs/bevy_asset/latest/bevy_asset/struct.AssetServer.html#method.load_folder)
-* a `Handle<U>` of  of a different type, consider whether this is the correct handle type to store. If it is (i.e. the same handle id is used for multiple different Asset types) use `Handle::weak(handle.id)` to cast to a different type.
+* a `Handle<U>` of a different type, consider whether this is the correct handle type to store. If it is (i.e. the same handle id is used for multiple different Asset types) use `Handle::weak(handle.id)` to cast to a different type.
 
 ### [Allow higher order systems](https://github.com/bevyengine/bevy/pull/4833)
 
@@ -384,7 +384,7 @@ Please note that all existing extract systems need to be updated to match this n
 ### [Improve Gamepad DPad Button Detection](https://github.com/bevyengine/bevy/pull/5220)
 
 D-pad inputs can no longer be accessed as axes.
-Acess them as gamepad buttons instead.
+Access them as gamepad buttons instead.
 
 ### [Change window position types from tuple to vec](https://github.com/bevyengine/bevy/pull/5276)
 
