@@ -45,6 +45,7 @@ jobs:
         uses: NiklasEi/wasm-opt-action@v2.2.0
         with:
           file: content/examples/**/*.wasm
+          optimize_all: "true"
 
       - name: "Build and deploy website"
         uses: shalzz/zola-deploy-action@master
