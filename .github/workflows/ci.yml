@@ -102,6 +102,12 @@ jobs:
           cd generate-wasm-examples &&
           ./generate_wasm_examples.sh
 
+      - name: "Optimize examples"
+        uses: NiklasEi/wasm-opt-action@v2
+        with:
+          file: content/examples/**/*.wasm
+          optimize_all: "true"
+
       - uses: actions/upload-artifact@master
         with:
           name: generated-wasm-examples
