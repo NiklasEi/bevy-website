@@ -41,8 +41,12 @@ jobs:
       - name: "Build Bevy Examples"
         run: cargo install wasm-bindgen-cli && cd generate-wasm-examples && ./generate_wasm_examples.sh
 
+      - name: "Optimize examples"
+        uses: NiklasEi/wasm-opt-action@v2.2.0
+        with:
+          file: content/examples/**/*.wasm
+
       - name: "Build and deploy website"
-        if: github.repository_owner == 'bevyengine'
         uses: shalzz/zola-deploy-action@master
         env:
           PAGES_BRANCH: gh-pages
